@@ -6,7 +6,7 @@ meta:
 build:
   artifacts:
     '*': /
-  additionalCommands: cd server && npm install && npm run start
+  additionalCommands: cd server && npm install
 run:
   command: npm run start
   persistenceMount: /data
