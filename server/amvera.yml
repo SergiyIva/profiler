@@ -6,8 +6,8 @@ meta:
 build:
   artifacts:
     '*': /
-  additionalCommands: cd server && npm install
+  additionalCommands: npm install
 run:
-  command: cd server && npm run start
+  command: npm run start
   persistenceMount: /data
   containerPort: 80
