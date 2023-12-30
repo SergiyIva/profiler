@@ -1,0 +1,13 @@
+{
+  "name": "profiler",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "cd server && npm install",
+    "start": "cd server && npm run start"
+  },
+  "private": true,
+  "engines": {
+    "node": "20.x"
+  }
+}
