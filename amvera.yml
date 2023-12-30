@@ -8,6 +8,6 @@ build:
     '*': /
   additionalCommands: cd server && npm install
 run:
-  command: npm run start
+  command: cd server && npm run start
   persistenceMount: /data
   containerPort: 80
