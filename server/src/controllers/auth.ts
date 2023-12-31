@@ -15,14 +15,16 @@ import { OK } from "../constants/responses.js";
 
 export const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
-  validateAuth(res, { email, password });
+  if (!validateAuth(res, { email, password })) return;
   const trimedEmail = email.trim().toLowerCase();
   const user = await models.User.findOne({
     email: trimedEmail,
   });
   if (!user) return res.status(401).send(AUTH_ERROR);
   const valid = await bcrypt.compare(password, user.password);
-  if (!valid) return res.status(401).send(AUTH_ERROR);
+  if (!valid) {
+    return res.status(401).send(AUTH_ERROR);
+  }
   await authTokens(user, res);
   res.status(200).send(user);
 };

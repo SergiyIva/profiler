@@ -10,6 +10,6 @@ export const validateAuth = validator(
 );
 
 export const isValidEmail = (email: string) =>
-  !!email && email.length < 301 && /^\S+@\S+\.+\w{2,10}$/.test(email);
+  !!email && email.length < 301 && /^\s*\S+@\S+\.+\w{2,10}\s*$/.test(email);
 export const isValidPassword = (password: string) =>
   !!password && password.length > 3 && password.length < 201;
